@@ -16,7 +16,7 @@ Where:
 - `a`, `b` and `c` are variable expressions
 - `foo` is a function expression
 - `c * 3` is an arithmetic expression
-- `foo(c * 3) is a call function expression
+- `foo(c * 3)` is a call function expression
 - `b * 2` is an arithmetic expression too \*
 - `b * 2 + foo(c * 3)` is also an arithmetic expression
 - `a = b * 2 + foo(c * 3);` is an entire assignment expression (AKA assignment statement)
@@ -32,7 +32,7 @@ Now `2 + foo(c * 3)` will be calculate _before_ `b * ` and the priority is satis
 - `a`, `b` and `c` are variable expressions
 - `foo` is a function expression
 - `c * 3` is an arithmetic expression
-- `foo(c * 3) is a call function expression
+- `foo(c * 3)` is a call function expression
 - `2 + foo(c * 3)` is an arithmetic expression too \*
 - `b * (2 + foo(c * 3))` is also an arithmetic expression
 - `a = b * (2 + foo(c * 3));` is an entire assignment expression (AKA assignment statement)
