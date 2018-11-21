@@ -1,6 +1,6 @@
 # js-study
 
-###### *Based on Kyle Simpson's (AKA Getify) book series You Don't Know JS, here are some notes about JS studies.*
+###### _Based on Kyle Simpson's (AKA Getify) book series You Don't Know JS, here are some notes about JS studies._
 
 ### About Code
 
@@ -10,7 +10,7 @@ In JS, and others high level languages, are writen for developers, not to comput
 
 ### Syntax and grammar
 
-Thinking of mantaining a standard, languages have rules called syntax. Syntaxes are composed of expressions, and compose language grammar. It's similar to *human languages*.
+Thinking of mantaining a standard, languages have rules called syntax. Syntaxes are composed of expressions, and compose language grammar. It's similar to _human languages_.
 > The rules for valid format and combinations of instructions is called a computer language, sometimes referred to as its **SYNTAX**, much the same as English tells you how to spell words and how to create valid sentences using words and punctuation.
 
 ### Statements
@@ -66,7 +66,7 @@ Ex:
 - `a = b * 2;`
 
 
-*An expression can also be a statement, if are a major group (ex: `(a = b * 2);`, all inside parentesis is a expression and has nothing outside,* __semicolon doesn't count__ *), what we call an expression statement.*
+_An expression can also be a statement, if are a major group (ex: `(a = b * 2);`, all inside parentesis is a expression and has nothing outside,_ **semicolon doesn't count** _), what we call an expression statement._
 
 ---
 ##### Exercise 1 - `fundamentals.md`
@@ -75,12 +75,49 @@ Ex:
 ### Executing a Program
 
 In order to execute a program, compilers and interpreters _'transform'_ human readable statements into low-level instructions (0's and 1's), layer by layer, so CPU can understand and process the program.
-JavaScript is *interpreted* by JavaScript engine, and is built in on most of browser and can be accessed through developer tools.
+JavaScript is _interpreted_ by JavaScript engine, and is built in on most of browser and can be accessed through developer tools.
 
 Interpreted languages (usually script languages) are interpreted line by line, essentially. In other hand, compiled languages first pass through the program (also, line by line) to validate the syntax, before really compile, transforming into binaries, and then we are able to run.
 
 Looking with this eyes, JavaScript is close to compiled languages, because it verify each line before run on interpreter. Even don't generating binaries, JS compile our application, checking for errors, and run(or not, if syntax errors was found).
 
+> It's typically asserted that JavaScript is interpreted, because your JavaScript source code is processed each time it's run. But that's not entirely accurate. The JavaScript engine actually compiles the program on the fly and then immediately runs the compiled code.
+
 #### Browser console
 
 The easiest way to master all languages is coding and running. We can pass all day writing code, but if we don't run them, we don't really know it behavior. Most browsers today have a JS console that runs JavaScript codes. Another way is finding some JavaScript IDE, online editor (JSFiddle, JSBin) or installing nodeJS.
+
+> The easiest way to do that is to open up the developer tools console in your nearest browser (Firefox, Chrome, IE, etc.). You can launch the developer console with a keyboard shortcut or from a menu item.
+
+#### Output
+
+We have two basic outputs on JavaScript console. The most traditional of all is `alert()`. Alert statement pops up a message box, but alert is not part of JavaScript, it comes from the browser.
+Ex:
+
+```js
+alert('Hello World');
+```
+
+_If we try to run `alert()` in Node, probably will not work, because Node doesn't have this function built in._
+
+Is more common to use `console.log()` statement as output. Console.log logs a message through console.
+Ex:
+
+```js
+console.log('Hello World');
+```
+
+###### _We can assume now that everything printed by console is returned as string._
+Also, we can _'print'_ our outputs on a page with HTML.
+
+#### Inputs
+
+Because we often uses JS _outside_ console, normally we don't need an human input popping up. Actually we catch values by the User Interface with buttons, forms, etc.
+
+To takes input through the console we can use`prompt`:
+
+```js
+var age = prompt("What is your age?")
+```
+
+This will pop up a message box (like `alert`) showing "What is your age?", one _InputBox_, and the buttons _OK_ and _Cancel_.
