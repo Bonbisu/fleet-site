@@ -110,6 +110,10 @@ console.log('Hello World');
 ###### _We can assume now that everything printed by console is returned as string._
 Also, we can _'print'_ our outputs on a page with HTML.
 
+> If you run that, you'll notice that instead of printing the output to the console, it shows a popup "OK" box with the contents of the `b` variable. However, using `console.log(..)` is generally going to make learning about coding and running your programs in the console easier than using `alert(..)`, because you can output many values at once without interrupting the browser interface.
+
+> For this book, we'll use `console.log(..)` for output.
+
 #### Inputs
 
 Because we often uses JS _outside_ console, normally we don't need an human input popping up. Actually we catch values by the User Interface with buttons, forms, etc.
@@ -122,27 +126,29 @@ var age = prompt("What is your age?")
 
 This will pop up a message box (like `alert`) showing "What is your age?", one _InputBox_, and the buttons _OK_ and _Cancel_.
 
+> To keep things simple while we're learning basic programming concepts, the examples in this book will not require input. But now that you've seen how to use `prompt(..)`, if you want to challenge yourself you can try to use input in your explorations of the examples.
+
 #### Operators
 
->Operators are how we perform actions on variables and values. Kyle made a list of the most commons operators and put on his book:
+Operators are how we perform actions on variables and values. Kyle made a list of the most commons operators and put on his book:
+
+> Here are some of the most common operators in JavaScript:
 >
->Here are some of the most common operators in JavaScript:
+> * Assignment: `=` as in `a = 2`.
+> * Math: `+` (addition), `-` (subtraction), `*` (multiplication), and `/` (division), as in `a * 3`.
+> * Compound Assignment: `+=`, `-=`, `*=`, and `/=` are compound operators that combine a math operation with assignment, as in `a += 2` (same as `a = a + 2`).
+> * Increment/Decrement: `++` (increment), `--` (decrement), as in `a++` (similar to `a = a + 1`).
+> * Object Property Access: `.` as in `console.log()`.
 >
->* Assignment: `=` as in `a = 2`.
->* Math: `+` (addition), `-` (subtraction), `*` (multiplication), and `/` (division), as in `a * 3`.
->* Compound Assignment: `+=`, `-=`, `*=`, and `/=` are compound operators that combine a math operation with assignment, as in `a += 2` (same as `a = a + 2`).
->* Increment/Decrement: `++` (increment), `--` (decrement), as in `a++` (similar to `a = a + 1`).
->* Object Property Access: `.` as in `console.log()`.
+>    Objects are values that hold other values at specific named locations called properties. `obj.a` means an object value called `obj` with a property of the name `a`. Properties can alternatively be accessed as `obj["a"]`. See Chapter 2.
+> * Equality: `==` (loose-equals), `===` (strict-equals), `!=` (loose not-equals), `!==` (strict not-equals), as in `a == b`.
 >
->   Objects are values that hold other values at specific named locations called properties. `obj.a` means an object value called `obj` with a property of the name `a`. Properties can alternatively be accessed as `obj["a"]`. See Chapter 2.
->* Equality: `==` (loose-equals), `===` (strict-equals), `!=` (loose not-equals), `!==` (strict not-equals), as in `a == b`.
+>    See "Values & Types" and Chapter 2.
+> * Comparison: `<` (less than), `>` (greater than), `<=` (less than or loose-equals), `>=` (greater than or loose-equals), as in `a <= b`.
 >
->   See "Values & Types" and Chapter 2.
->* Comparison: `<` (less than), `>` (greater than), `<=` (less than or loose-equals), `>=` (greater than or loose-equals), as in `a <= b`.
+>    See "Values & Types" and Chapter 2.
+> * Logical: `&&` (and), `||` (or), as in `a || b` that selects either `a` *or* `b`.
 >
->   See "Values & Types" and Chapter 2.
->* Logical: `&&` (and), `||` (or), as in `a || b` that selects either `a` *or* `b`.
+>    These operators are used to express compound conditionals (see "Conditionals"), like if either `a` *or* `b` is true.
 >
->   These operators are used to express compound conditionals (see "Conditionals"), like if either `a` *or* `b` is true.
->
->**Note:** For much more detail, and coverage of operators not mentioned here, see the Mozilla Developer Network (MDN)'s "Expressions and Operators" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators).
+> **Note:** For much more detail, and coverage of operators not mentioned here, see the Mozilla Developer Network (MDN)'s "Expressions and Operators" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators).
