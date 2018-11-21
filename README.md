@@ -23,7 +23,7 @@ A group of expressions that can perform a task are called **STATEMENT**. Languag
 Every element within a statement can be considered an expression, except for the semicolon.
 Example:
 ```js
-	a = b * 2;
+a = b * 2;
 ```
 The statement above has 4 expressions:
 - `2` is a literal value expression
@@ -34,7 +34,7 @@ The statement above has 4 expressions:
 Another view is separating expressions by parentesis:
 
 ```js
-	((a) = ((b) * (2)) );
+((a) = ((b) * (2)) );
 ```
 
 #### Types of Expressions
