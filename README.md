@@ -65,7 +65,9 @@ Ex:
 - `b = 21;`
 - `a = b * 2;`
 
-###### An expression can also be a statement, if are a major group (ex: `(a = b * 2);`, all inside parentesis is a expression and has nothing outside, __*semicolon doesn't count*__ ), what we call an expression statement.
+
+*An expression can also be a statement, if are a major group (ex: `(a = b * 2);`, all inside parentesis is a expression and has nothing outside,* __semicolon doesn't count__ *), what we call an expression statement.*
+
 ---
 ##### Exercise 1 - `fundamentals.md`
 ---
