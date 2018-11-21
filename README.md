@@ -72,4 +72,13 @@ Ex:
 ##### Exercise 1 - `fundamentals.md`
 ---
 
+### Executing a Program
+
+In order to execute a program, compilers and interpreters _'transform'_ human readable statements into low-level instructions (0's and 1's), layer by layer, so CPU can understand and process the program. 
+JavaScript is *interpreted* by JavaScript engine, and is built in on most of browser and can be accessed through developer tools.
+
+Interpreted languages (usually script languages) are interpreted line by line, essentially. In other hand, compiled languages first pass through the program (also, line by line) to validate the syntax, before really compile, transforming into binaries, and then we are able to run.
+
+Looking with this eyes, JavaScript is close to compiled languages, because it verify each line before run on interpreter. Even don't generating binaries, JS compile our application, checking for errors, and run(or not, if errors was found).
+
 
