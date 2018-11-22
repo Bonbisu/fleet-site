@@ -326,11 +326,7 @@ Values that aren't already of an expected type are often coerced to that type. T
 > JavaScript defines a list of specific values that are considered "falsy" because when coerced to a `boolean`, they become `false` -- these include values like `0` and `""`. Any other value not on the "falsy" list is automatically "truthy" -- when coerced to a `boolean` they become `true`. Truthy values include things like `99.99` and `"free"`.
 
 _Falsy_ values can be:
-<<<<<<< HEAD
 `0`, `-0`, `NaN`, `""`, `false`, `null` and `undefined`.
-=======
-`0`,`-0`,`NaN`,`""`,`false`,`null` and `undefined`.
->>>>>>> 30c9bd97dcb9f7f4f6250cd747e64e3f37466367
 If the value is not in the **falsy** possible values, it's a _truthy_ value, and will coerced to `true`.
 
 Have another one word that can be misinterpreted which is `void`. Void, in fact says _everything after `void` becomes undefined_. But it's not very commonly used.
