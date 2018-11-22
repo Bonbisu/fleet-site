@@ -7,6 +7,7 @@
 Code is a set of files writted by developers to developers, in order to do some task in computer.
 
 > A program, often referred to as source code or just code, is a set of special instructions to tell the computer what tasks to perform.
+
 In JS, and others high level languages, are writen for developers, not to computers, this means that all code must be more comprehensive as possible for other developer, or a future yourself without references about the code or forget about(tmm).
 
 ### Syntax and grammar
@@ -191,3 +192,58 @@ For example, concatenating a number with a string, force the number coercion to 
 > To help you out in these common situations, JavaScript will sometimes kick in and *implicitly* coerce values to the matching types.
 
 > So if you use the `==` loose equals operator to make the comparison `"99.99" == 99.99`, JavaScript will convert the left-hand side `"99.99"` to its `number` equivalent `99.99`. The comparison then becomes `99.99 == 99.99`, which is of course `true`.
+
+### Comments
+
+As already said, all code must be most understandable as possible for developers, even a future yourself who reading some old codes. In order to achieve a readability in our code, comments should help to explain what that application do. Is a good practice, mainly in literal values, put comments telling what the meaning of that value.
+Comments in JavaScript comes in two forms. For single line comments(_end line comments too_) can be used double forward slashes `//` before comment:
+
+```js
+// this is a comment
+
+var a = 42; // 42 is the meaning of life
+
+// comments are not compiled/interpreted
+```
+
+Another way of commenting is using `/*` to open a comment, `*/` to close. This form allows multi-line comments*:
+
+```js
+/*
+this is a comment
+is not needed more forward slashes
+to comment in other lines
+*/
+var comment = 'awesome readable code'
+/*
+Always
+Comment
+Codes
+*/
+```
+
+###### \* _JS also allows comment in the middle of the code through multi-line comments, it's weird, but works:_
+```js
+var a = /* inside
+comment */ 42;
+```
+
+Comments should never say what, comments should say why or how, the program say what. Good comments try to describe implicit or confusing functions, and reasons to values too.
+
+```js
+var a = 42;// assign 42 to 'a'
+/*
+useless comment above,
+code already tell that,
+we must say why this value,
+or how this this works
+*/
+```
+
+> ... another important part is code comments. These are bits of text in your program that are inserted purely to explain things to a human. The interpreter/compiler will always ignore these comments.
+
+> There are lots of opinions on what makes well-commented code; we can't really define absolute universal rules. But some observations and guidelines are quite useful:
+
+> * Code without comments is suboptimal.
+> * Too many comments (one per line, for example) is probably a sign of poorly written code.
+> * Comments should explain *why*, not *what*. They can optionally explain *how* if that's particularly confusing.
