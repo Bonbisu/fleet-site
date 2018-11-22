@@ -299,16 +299,36 @@ var price = 99.00;
 }
 ```
 
-> This kind of standalone `{ .. }` general block is valid, but isn't as commonly seen in JS programs. Typically, blocks are attached to some other control statement, such as an `if` statement (see "Conditionals") or a loop (see "Loops"). For example:
-
-```js
-var amount = 99.99;
-
-// is amount big enough?
-if (amount > 10) {			// <-- block attached to `if`
-	amount = amount * 2;
-	console.log( amount );	// 199.98
-}
-```
+> This kind of standalone `{ .. }` general block is valid, but isn't as commonly seen in JS programs. Typically, blocks are attached to some other control statement, such as an `if` statement  or a loop.
 
 **Note:** Unlike most other statements like `console.log(amount);`, a block statement does not need a semicolon (`;`) to conclude it.
+
+### Conditionals
+
+When a program needs some kind a decision based on some value, we can use a conditional statement or _if-then_ statement.
+If statement use an expression to evaluate true and then run a block of code. When an expression evaluates false, the block won't run.
+If statements also provides exceptions if test expression result in `false` with _else_ statement. For example:
+
+```js
+var bank_balance = 302.13;
+var amount = 99.99;
+// can I buy this phone?
+if (amount < bank_balance) {
+	console.log( "I can buy this phone!" );
+}
+// otherwise:
+else {
+	console.log( "No, thanks." );
+}
+```
+Values that aren't already of an expected type are often coerced to that type. The `if` statement expects a `boolean`, but if you pass it something that's not already `boolean`, coercion will occur.
+
+> JavaScript defines a list of specific values that are considered "falsy" because when coerced to a `boolean`, they become `false` -- these include values like `0` and `""`. Any other value not on the "falsy" list is automatically "truthy" -- when coerced to a `boolean` they become `true`. Truthy values include things like `99.99` and `"free"`.
+
+_Falsy_ values can be:
+`0`, `-0`, `NaN`, `""`, `false`, `null` and `undefined`.
+If the value is not in the **falsy** possible values, it's a _truthy_ value, and will coerced to `true`.
+
+Have another one word that can be misinterpreted which is `void`. Void, in fact says _everything after `void` becomes undefined_. But it's not very commonly used.
+
+*Conditionals* exist in other forms besides the `if`. For example, the `switch` statement can be used as a shorthand for a series of `if..else` statements. Loops use a *conditional* to determine if the loop should keep going or stop.
