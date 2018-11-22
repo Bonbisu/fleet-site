@@ -93,7 +93,7 @@ The easiest way to master all languages is `coding` and `running`. We can pass a
 
 > The easiest way to do that is to open up the developer tools console in your nearest browser (Firefox, Chrome, IE, etc.). You can launch the developer console with a keyboard shortcut or from a menu item.
 
-#### Output
+### Output
 
 JavaScript have two basic outputs, the most traditional of all is `alert()`. Alert statement pops up a message box, but alert is not part of JavaScript, it comes from the browser.
 Ex:
@@ -118,7 +118,7 @@ Also, _JS_ can _'print'_ our outputs on a page with HTML.
 
 > For this book, we'll use `console.log(..)` for output.
 
-#### Inputs
+### Inputs
 
 Because we often uses JS _outside_ console, normally is not needed an input popping up. Actually applications usually capture values by the _user interface_ with buttons, forms, etc.
 
@@ -132,7 +132,7 @@ This will pop up a message box (like `alert`) showing "What is your age?", one _
 
 > To keep things simple while we're learning basic programming concepts, the examples in this book will not require input. But now that you've seen how to use `prompt(..)`, if you want to challenge yourself you can try to use input in your explorations of the examples.
 
-#### Operators
+### Operators
 
 Operators are how we perform actions on variables and values. Kyle made a list of the most commons operators and put on his book:
 
@@ -157,7 +157,7 @@ Operators are how we perform actions on variables and values. Kyle made a list o
 >
 > **Note:** For much more detail, and coverage of operators not mentioned here, see the Mozilla Developer Network (MDN)'s "Expressions and Operators" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators).
 
-#### Values and Types
+### Values and Types
 
 In human languages have several ways of saying the same thing. For instance, _half_ can mean `0.50` if talk about currency, also can be `30 minutes` talking about hours. Similarly, in programming the same idea can be expressed in different representations based on what planned to do with them.
 
