@@ -182,15 +182,15 @@ a = a + ""; // 'adding'(concatenating) an empty string
 For example, concatenating a number with a string, force the number coercion to an string before concatenation.
 
 > If you have a number but need to print it on the screen, you need to convert the value to a string, and in JavaScript this conversion is called "coercion." Similarly, if someone enters a series of numeric characters into a form on an ecommerce page, that's a string, but if you need to then use that value to do math operations, you need to coerce it to a number.
-
+>
 > Using `Number(..)` (a built-in function) as shown is an explicit coercion from any other type to the number type. That should be pretty straightforward.
-
+>
 > But a controversial topic is what happens when you try to compare two values that are not already of the same type, which would require *implicit* coercion.
-
+>
 > When comparing the string `"99.99"` to the number `99.99`, most people would agree they are equivalent. But they're not exactly the same, are they? It's the same value in two different representations, two different *types*. You could say they're "loosely equal," couldn't you?
-
+>
 > To help you out in these common situations, JavaScript will sometimes kick in and *implicitly* coerce values to the matching types.
-
+>
 > So if you use the `==` loose equals operator to make the comparison `"99.99" == 99.99`, JavaScript will convert the left-hand side `"99.99"` to its `number` equivalent `99.99`. The comparison then becomes `99.99 == 99.99`, which is of course `true`.
 
 ### Comments
@@ -236,14 +236,14 @@ var a = 42;// assign 42 to 'a'
 useless comment above,
 code already tell that,
 we must say why this value,
-or how this this works
+or how this works
 */
 ```
 
 > ... another important part is code comments. These are bits of text in your program that are inserted purely to explain things to a human. The interpreter/compiler will always ignore these comments.
-
+>
 > There are lots of opinions on what makes well-commented code; we can't really define absolute universal rules. But some observations and guidelines are quite useful:
-
+>
 > * Code without comments is suboptimal.
 > * Too many comments (one per line, for example) is probably a sign of poorly written code.
 > * Comments should explain *why*, not *what*. They can optionally explain *how* if that's particularly confusing.
