@@ -5,12 +5,14 @@
 ### About Code
 
 Code is a set of files writted by developers to developers, in order to do some task in computer.
+
 > A program, often referred to as source code or just code, is a set of special instructions to tell the computer what tasks to perform.
 In JS, and others high level languages, are writen for developers, not to computers, this means that all code must be more comprehensive as possible for other developer, or a future yourself without references about the code or forget about(tmm).
 
 ### Syntax and grammar
 
 Thinking of mantaining a standard, languages have rules called syntax. Syntaxes are composed of expressions, and compose language grammar. It's similar to _human languages_.
+
 > The rules for valid format and combinations of instructions is called a computer language, sometimes referred to as its **SYNTAX**, much the same as English tells you how to spell words and how to create valid sentences using words and punctuation.
 
 ### Statements
@@ -22,16 +24,18 @@ A group of expressions that can perform a task are called **STATEMENT**. Languag
 
 Every element within a statement can be considered an expression, except for the semicolon.
 Example:
+
 ```js
 a = b * 2;
 ```
+
 The statement above has 4 expressions:
 - `2` is a literal value expression
 - `b` is a variable expression, which means to retrieve its current value
 - `b * 2` is an arithmetic expression, which means to do the multiplication
 - `a = b * 2` is an assignment expression, which means to assign the result of the b * 2 expression to the variable a (more on assignments later)
 
-Another view is separating expressions by parentesis:
+Another view is separating expressions by `parentheses/brackets`:
 
 ```js
 ((a) = ((b) * (2)) );
@@ -45,7 +49,7 @@ Ex:
 - `5`
 
 ##### 2. Variable expression
-Characteres that can stores values.
+Characters that can stores values.
 Ex:
 - `a`
 - `b`
@@ -66,7 +70,7 @@ Ex:
 - `a = b * 2;`
 
 
-_An expression can also be a statement, if are a major group (ex: `(a = b * 2);`, all inside parentesis is a expression and has nothing outside,_ **semicolon doesn't count** _), what we call an expression statement._
+_An expression can also be a statement, if are a major group (ex: `(a = b * 2);`, all inside `parentheses/brackets` is a expression and has nothing outside,_ **semicolon doesn't count** _), what we call an expression statement._
 
 ---
 ##### Exercise 1 - `fundamentals.md`
@@ -79,19 +83,19 @@ JavaScript is _interpreted_ by JavaScript engine, and is built in on most of bro
 
 Interpreted languages (usually script languages) are interpreted line by line, essentially. In other hand, compiled languages first pass through the program (also, line by line) to validate the syntax, before really compile, transforming into binaries, and then we are able to run.
 
-Looking with this eyes, JavaScript is close to compiled languages, because it verify each line before run on interpreter. Even don't generating binaries, JS compile our application, checking for errors, and run(or not, if syntax errors was found).
+Thus JavaScript is closer to compiled languages because it verify each line before run on interpreter. Even don't generating binaries, _JS_ compile our application, checking for errors, and run(or not, if syntax errors was found).
 
 > It's typically asserted that JavaScript is interpreted, because your JavaScript source code is processed each time it's run. But that's not entirely accurate. The JavaScript engine actually compiles the program on the fly and then immediately runs the compiled code.
 
 #### Browser console
 
-The easiest way to master all languages is coding and running. We can pass all day writing code, but if we don't run them, we don't really know it behavior. Most browsers today have a JS console that runs JavaScript codes. Another way is finding some JavaScript IDE, online editor (JSFiddle, JSBin) or installing nodeJS.
+The easiest way to master all languages is `coding` and `running`. We can pass all day writing code, but if we don't run them, we really don't know it behavior. Most browsers today have a _JS_ console that runs JavaScript codes. Another way is finding some JavaScript IDE, online editor (JSFiddle, JSBin) or installing nodeJS.
 
 > The easiest way to do that is to open up the developer tools console in your nearest browser (Firefox, Chrome, IE, etc.). You can launch the developer console with a keyboard shortcut or from a menu item.
 
 #### Output
 
-We have two basic outputs on JavaScript console. The most traditional of all is `alert()`. Alert statement pops up a message box, but alert is not part of JavaScript, it comes from the browser.
+JavaScript have two basic outputs, the most traditional of all is `alert()`. Alert statement pops up a message box, but alert is not part of JavaScript, it comes from the browser.
 Ex:
 
 ```js
@@ -107,8 +111,8 @@ Ex:
 console.log('Hello World');
 ```
 
-###### _We can assume now that everything printed by console is returned as string._
-Also, we can _'print'_ our outputs on a page with HTML.
+###### _We can assume now that everything printed by console is returned like a string._
+Also, _JS_ can _'print'_ our outputs on a page with HTML.
 
 > If you run that, you'll notice that instead of printing the output to the console, it shows a popup "OK" box with the contents of the `b` variable. However, using `console.log(..)` is generally going to make learning about coding and running your programs in the console easier than using `alert(..)`, because you can output many values at once without interrupting the browser interface.
 
@@ -116,7 +120,7 @@ Also, we can _'print'_ our outputs on a page with HTML.
 
 #### Inputs
 
-Because we often uses JS _outside_ console, normally we don't need an human input popping up. Actually we catch values by the User Interface with buttons, forms, etc.
+Because we often uses JS _outside_ console, normally is not needed an input popping up. Actually applications usually capture values by the _user interface_ with buttons, forms, etc.
 
 To takes input through the console we can use`prompt`:
 
@@ -152,3 +156,38 @@ Operators are how we perform actions on variables and values. Kyle made a list o
 >    These operators are used to express compound conditionals (see "Conditionals"), like if either `a` *or* `b` is true.
 >
 > **Note:** For much more detail, and coverage of operators not mentioned here, see the Mozilla Developer Network (MDN)'s "Expressions and Operators" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators).
+
+#### Values and Types
+
+In human languages have several ways of saying the same thing. For instance, _half_ can mean `0.50` if talk about currency, also can be `30 minutes` talking about hours. Similarly, in programming the same idea can be expressed in different representations based on what planned to do with them.
+
+> These different representations for values are called *types* in programming terminology. JavaScript has built-in types for each of these so called *primitive* values:
+>
+> * When you need to do math, you want a `number`.
+> * When you need to print a value on the screen, you need a `string` (one or more characters, words, sentences).
+> * When you need to make a decision in your program, you need a `boolean` (`true` or `false`).
+>
+> Values that are included directly in the source code are called *literals*. `string` literals are surrounded by double quotes `"..."` or single quotes (`'...'`) -- the only difference is stylistic preference. `number` and `boolean` literals are just presented as is (i.e., `42`, `true`, etc.).
+
+#### Converting Between Types
+
+However, programming provides converting values if needed (_some functions automatically converts when called_). In JavaScript have a feature called coercion that differs from conversion in explicitness level. _JS_ have literal, explicit conversion functions like `String(a)` or `Number(b)`, also have implicit conversion(coercion):
+
+```js
+a = 42;
+a = a + ""; // 'adding'(concatenating) an empty string
+```
+
+For example, concatenating a number with a string, force the number coercion to an string before concatenation.
+
+> If you have a number but need to print it on the screen, you need to convert the value to a string, and in JavaScript this conversion is called "coercion." Similarly, if someone enters a series of numeric characters into a form on an ecommerce page, that's a string, but if you need to then use that value to do math operations, you need to coerce it to a number.
+
+> Using `Number(..)` (a built-in function) as shown is an explicit coercion from any other type to the number type. That should be pretty straightforward.
+
+> But a controversial topic is what happens when you try to compare two values that are not already of the same type, which would require *implicit* coercion.
+
+> When comparing the string `"99.99"` to the number `99.99`, most people would agree they are equivalent. But they're not exactly the same, are they? It's the same value in two different representations, two different *types*. You could say they're "loosely equal," couldn't you?
+
+> To help you out in these common situations, JavaScript will sometimes kick in and *implicitly* coerce values to the matching types.
+
+> So if you use the `==` loose equals operator to make the comparison `"99.99" == 99.99`, JavaScript will convert the left-hand side `"99.99"` to its `number` equivalent `99.99`. The comparison then becomes `99.99 == 99.99`, which is of course `true`.
