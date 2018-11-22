@@ -247,3 +247,68 @@ or how this works
 > * Code without comments is suboptimal.
 > * Too many comments (one per line, for example) is probably a sign of poorly written code.
 > * Comments should explain *why*, not *what*. They can optionally explain *how* if that's particularly confusing.
+>
+> You will definitely want to begin your learning of programming by starting off with the habit of commenting code. Throughout the rest of this chapter, you'll see I use comments to explain things, so do the same in your own practice. Trust me, everyone who reads your code will thank you!
+
+### Variables
+
+Variables is a type of bucket that holds some value. _JS_ needs a formal declaration for every variable inside the code to work, even you can assign values to some variable without the `var` keyword.
+A variable can carry `numbers`, `strings` or `function`.
+
+Here are the **four** ways to formally declare a variable:
+
+```js
+var a = 42; // default variable declaration
+
+let b = 2; // another way to declare, depends on target scope behavior - ES6
+
+const c = 42; // it's not a true variable, it's a constant - ES6
+
+function d() {} // functions have special variable declaration
+  ```
+###### \* In short, the difference between `var` and `let` is that `var` is used inside of a function, while `let` is used inside of a block. `let` and `const` are features from ECMA Script 6 (ES6), a kind of standardization of JavaScript. We can see a deeper explanation in Scopes and Closures book and Advanced JavaScript on Frontend Masters , by Getify.
+
+In vanilla(pure) JavaScript, doesn't exist constants, however they can be declared at the top of a program with a special syntax. By convention, JavaScript variables as constants are usually capitalized, with underscores `_` between multiple words. These constants can be used just like common variables.
+
+```js
+var TAX_RATE = 0.08;  // 8% sales tax
+```
+
+Although, `TAX_RATE` variable is only **constant** by convention, and has nothing preventing the value to changes, differently from `const` in ES6.
+
+JavaScript has a interesting feature called _hoisting_, that can permits a variable to be declared after assignment.
+
+
+> The easiest way to go about that in your program is to assign a value to a symbolic container, called a variable -- so called because the value in this container can vary over time as needed.
+>
+> In some programming languages, you declare a variable (container) to hold a specific type of value, such as number or string. Static typing, otherwise known as type enforcement, is typically cited as a benefit for program correctness by preventing unintended value conversions.
+> Other languages emphasize types for values instead of variables. Weak typing, otherwise known as dynamic typing, allows a variable to hold any type of value at any time. It's typically cited as a benefit for program flexibility by allowing a single variable to represent a value no matter what type form that value may take at any given moment in the program's logic flow.
+>
+> JavaScript uses the latter approach, dynamic typing, meaning variables can hold values of any type without any type enforcement.
+
+### Blocks
+
+JavaScript allows to group a number of statements in constructions called blocks.
+
+```js
+var price = 99.00;
+// a standalone block
+{
+  price = price * 0.90; // 10% off
+  console.log(price); // 89.10 - new price
+}
+```
+
+> This kind of standalone `{ .. }` general block is valid, but isn't as commonly seen in JS programs. Typically, blocks are attached to some other control statement, such as an `if` statement (see "Conditionals") or a loop (see "Loops"). For example:
+
+```js
+var amount = 99.99;
+
+// is amount big enough?
+if (amount > 10) {			// <-- block attached to `if`
+	amount = amount * 2;
+	console.log( amount );	// 199.98
+}
+```
+
+**Note:** Unlike most other statements like `console.log(amount);`, a block statement does not need a semicolon (`;`) to conclude it.
