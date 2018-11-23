@@ -4,7 +4,7 @@
 
 ### About Code
 
-Code is a set of files writted by developers to developers, in order to do some task in computer.
+Code is a set of files written by developers to developers, in order to do some task in computer.
 
 > A program, often referred to as source code or just code, is a set of special instructions to tell the computer what tasks to perform.
 
@@ -366,7 +366,7 @@ for (a = 0;a < 10; a++) {
 }
 ```
 
-**Note:** All clauses in a `for` loop are optional, and permits any combination, even none of them (going to run forever, because the condition will never fail).
+**Note:** All clauses in a `for` loop are optional, and permits any combination, even none of them (e.g. `for ( ; ; ) { .. }`). And going to run forever, because the condition will never fail.
 
 Following the thought that a conditional says 'when some expression fail stops the loop', it's easy to transform a `while` loop to behave like a `for` loop:
 
@@ -390,3 +390,131 @@ while (true) { /* test clause , run forever*/
 ```
 
 Also, _JS_ has a lot more ways to _breaks_ a loop, trowing an error, using break, continue to an outside label...
+
+### Functions
+
+A function is a way to group pieces of code like blocks, however functions also makes these block can called more than once.It's similar to blocks in the way of grouping code but can run any times wanted, also is like loops but doesn't runs forever. Functions are used to group a set of tasks together, and be able to call as many times needed.
+
+```js
+function printAmount() {
+  console.log( amount.toFixed(2) ); // available for all JS number, formats a 'number string' w/ 2 decimal digits in this case
+}
+var amount = 28.14;
+
+printAmount(); // calls a function and print on console formatted  -> 28.14;
+```
+
+---
+##### Exercise 2 - `firstFunction.js`
+---
+
+###### \* An off-topic about the function exercise: First, was defined a function, even without a variable declaration, after that, the `a` variable was declared. It's weird not declare variables on top of program, but is totally fine, _JS_ can handle that because of **hoisting**.
+
+```js
+function foo() { /* a function was declared first, using a variable not yet known */
+  a = a * 2;
+  a = a + 3;
+}
+
+var a = 10; // this variable will be hoisted to top
+
+foo();
+
+console.log(a);
+```
+
+###### Kyle usually write his programs declaring _functions_ at top, then _variables_, and after that, the program behavior as so. The **tip** here is _be consistent with your coding style, no matters what order picked/chosen._
+
+---
+
+#### Functions parameters and arguments
+
+Functions can also receive parameters for the purpose of do something _"regardless"_ of a variable declaration. _When a function is being declared, all variables inside parentheses are parameters. When a function is called, parameters get the name of arguments._
+
+```js
+function foo(b) { /* now, values can set on call */
+  a = a * 3;
+  a = a + b; // b depends on passed parameter, differently than a
+}
+
+a = 10;
+
+foo(3); // passing 3 results on the same result
+
+console.log(a); // 23
+
+foo(5); // any value can be set
+```
+
+JavaScript also allow pass a function as argument with tow different approaches:
+
+```js
+function foo(b) {
+  a = b * 3;
+}
+function bar() { .. }
+
+foo( bar );
+```
+
+If set `b` with a function, it continue being a function, to get the result of `bar` inside the `foo`, it needs to rewrite like:
+
+```js
+function foo(b) {
+  a = b() * 3; // calling 'b' on the assignment statement
+}
+```
+Also, we can call a function inside off a function call:
+
+```js
+function foo(b) {
+  a = b * 3;  
+}
+
+function bar() { .. }
+
+foo( bar() ); // calling 'bar' on the call statement
+```
+
+#### Function return
+
+Depending on scope, functions can change values of variables, only inside them, or can manipulates values outside. Generally, an variable declared outside an function can be read and written by the function. An internally declared variable can only exists inside that function.
+
+On the examples above has manipulating the values of `a` that was declared outside a function. Also, we can set a `return` for a function that trows some value when a function is called (without return, will be `undefined`). That return can be assigned in other variable, bringing a interesting behavior:
+```js
+function foo(b) {
+  a = a * 2;
+  a = a + b;
+  return a / 2;  
+}
+
+var a = 10;
+var b = foo(3);
+
+console.log(a); // 23
+console.log(b); // 11.5
+```
+
+In this example the return of `foo(3)` is now assigned to `b` with a half value of `a`, instead `a` remains the same. If not assigned to none variable, the `return` will be _"printed"_ on console, and not used anymore.
+With returns, make sense nest some function inside another (or the same, _recursively_) function, in order to use a return (output) as a parameter (input).
+
+```js
+function totalPrice(price, products) {
+  tPrice = price * products;
+}
+
+function calculateTax(tax) {
+  tax = tax/100;
+  realPrice = productPrice + (productPrice * tax);
+  return realPrice;
+}
+
+var productPrice = 15.69;
+var tPrice = 0;
+
+totalPrice(calculateTax(7), 3);
+
+console.log( tPrice );
+```
+
+A function `calculateTax` when called passing a 7% percent tax, will returns the already calculated price with tax as argument in `totalPrice` and calculate 3 items with this value.  
