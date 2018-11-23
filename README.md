@@ -8,7 +8,7 @@ Code is a set of files writted by developers to developers, in order to do some 
 
 > A program, often referred to as source code or just code, is a set of special instructions to tell the computer what tasks to perform.
 
-In JS, and others high level languages, are writen for developers, not to computers, this means that all code must be more comprehensive as possible for other developer, or a future yourself without references about the code or forget about(tmm).
+In JS, and others high level languages, are written for developers, not to computers, this means that all code must be more comprehensive as possible for other developer, or a future yourself without references about the code or forget about(tmm).
 
 ### Syntax and grammar
 
@@ -332,3 +332,61 @@ If the value is not in the **falsy** possible values, it's a _truthy_ value, and
 Have another one word that can be misinterpreted which is `void`. Void, in fact says _everything after `void` becomes undefined_. But it's not very commonly used.
 
 *Conditionals* exist in other forms besides the `if`. For example, the `switch` statement can be used as a shorthand for a series of `if..else` statements. Loops use a *conditional* to determine if the loop should keep going or stop.
+
+### Loops
+
+Loops are statements that can do a list of instructions while some conditional is evaluate as `true`, and stops when a certain condition becomes `false`. Like `if` statements, most of _loops_ are structured with a _keyword_, a _test expression_ (inside parentheses), and a _code block_ (inside curly-brace).
+An important observation, and _more accurate concept_ about loops are them will runs until the condition **fails**, in opposition to the thought that the loop runs due a condition is always true.
+
+> I think it's more appropriate not to say a loop runs while something is true, I think it's more appropriate to say **a loop runs until something is false**, until something stops it from running. It's natural state is to go forever until something tells it to stop going.
+
+JavaScript includes 3 important loop statements:  
+
+```js
+while (a) {
+  /*
+  a - test condition clause
+  */
+}
+
+do {
+  /*
+  test condition clause is after block
+  and have semicolon after
+  */
+} while (a);
+
+for (a = 0;a < 10; a++) {
+  /*
+  where:
+  a=0   - initialization clause
+  a<10  - test condition clause
+  a++   - update clause
+  */
+}
+```
+
+**Note:** All clauses in a `for` loop are optional, and permits any combination, even none of them (going to run forever, because the condition will never fail).
+
+Following the thought that a conditional says 'when some expression fail stops the loop', it's easy to transform a `while` loop to behave like a `for` loop:
+
+```js
+// for loop example
+for (a = 5; a < 10; a = a +1) {
+  console.log(a);
+}
+
+// while loop behaving like a for loop above
+
+a = 5; // initialization clause
+while (true) { /* test clause , run forever*/
+  if (a >= 10) { /* if statement to stops a loop(it's a negative "for-loop" test clause) */
+  break; /* break statement jumps out the loop */  
+  }
+  console.log(a);
+  a++ /* update clause - same as "a = a + 1" */
+}
+
+```
+
+Also, _JS_ has a lot more ways to _breaks_ a loop, trowing an error, using break, continue to an outside label...
