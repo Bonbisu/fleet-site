@@ -75,6 +75,8 @@ _An expression can also be a statement, if are a major group (ex: `(a = b * 2);`
 
 ---
 ##### Exercise 1 - `fundamentals.md`
+
+> Identify all expressions in a statement.
 ---
 
 ### Executing a Program
@@ -406,6 +408,11 @@ printAmount(); // calls a function and print on console formatted  -> 28.14;
 
 ---
 ##### Exercise 2 - `firstFunction.js`
+
+A litle 60 seconds homework :)
+
+> Declare a function with a couple statements and repeat some times through the program.
+
 ---
 
 ###### \* An off-topic about the function exercise: First, was defined a function, even without a variable declaration, after that, the `a` variable was declared. It's weird not declare variables on top of program, but is totally fine, _JS_ can handle that because of **hoisting**.
@@ -517,4 +524,49 @@ totalPrice(calculateTax(7), 3);
 console.log( tPrice );
 ```
 
-A function `calculateTax` when called passing a 7% percent tax, will returns the already calculated price with tax as argument in `totalPrice` and calculate 3 items with this value.  
+A function `calculateTax` when called passing a 7% percent tax, will returns the already calculated price with tax as argument in `totalPrice` and calculate 3 items with this value.
+
+### Scope
+
+Variables can be accessible by many different scopes, sometimes only inside a function (it only exists there), sometimes can be accessible globally, and everything inside a application can access.
+
+```js
+function foo(b) { // this b only can be accessed inside foo()
+  a = a * b;  // same 'a' from outside
+}
+
+var a; // 'a' is a global variable can be accessed anywhere
+
+console.log(b); // it's a reference error: 'b' is not defined (only exists inside foo() )
+```
+
+Scope can be interpreted like a bubble sorting out thing inside function or block from outside. It works like Venn Diagrams from Sets Theory, we can choose any scope we want:
+
+```js
+var c;
+function a(x) {    // function
+  function b(y) { // inner function
+    return x + y; // use variables from outer scope
+  }
+  return b;       // you can even return a function.
+}
+c = a(3)(4)
+
+console.log(c);
+```
+
+Above we have:
+- `c` - is a global variable, can be accessed everywhere,
+- `x` - can be accessed by `a()` and `b()`,
+- `y` - can be accessed by `b()` only,
+- `b` - is kind of `a()`  variable.]
+
+As a thumb rule: _You can always access variables above or outside of your scope, but you can never reference variables that are further down. That's a one-way street._
+
+---
+##### Challenge 1 - `challengeOne.js`
+
+> Write a program to calculate the total price of your phone purchase.
+---
+
+###### _Kyle's YDKJS first book ends here. For a while, we start with another studies based on ES6 Object Oriented course by Mark Zamoyta, inside the directory `./ES6-study`._
