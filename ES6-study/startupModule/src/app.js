@@ -6,6 +6,9 @@ class Drone {
         // class variables/properties
     }
 }
+Drone.maxHeight = 2000; // set a static/class property
+
+// static properties can not be accessed by instances like drone2.maxHeight
 
 let drone = new Drone('A123', 'Flyer');
 
