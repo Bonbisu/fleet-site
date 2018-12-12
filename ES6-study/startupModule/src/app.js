@@ -1,33 +1,25 @@
 class Drone {
-    constructor(id, name) {
-        this.id = id;
-        this.name = name;
+    constructor(id) {
+        this._id = id; // '_id' is a private variable by convention
     }
-
-    static getCompany() {
-        // create a static method for Drone class
-        console.log('in getCompany');
-
-        console.log(this.id); //  can't access instance properties
-        
-        
+    
+    get id() { // without the 'get' will need to use parenteses to call : drone.id()
+        return this._id; // now the getter will return the correct id just passin drone.id
     }
-
-    fly() {
-        // create a method for Drone instances (is like functions)
-        console.log('Drone ' + this.id + ' is flying to the moon'); // when working with instance of class, alway have to use 'this' keyword
-        
+    
+    set id(value) {
+        this._id = value; // set a new value to _id        
     }
 }
 
 
-let drone = new Drone('A123', 'Flyer');
-let drone2 = new Drone('B456', 'Twirl');
+let drone = new Drone('A123');
 
-drone.fly(); // call a method
-drone2.fly();
+// setting a new value with setter
+drone.id = 'B456';
 
-Drone.getCompany(); // call a static method
+// '_id' can be accessed by drone._id but is not common
+console.log('drone id: ' + drone.id ); // return undefined because the var are called '_id'
 
-drone.getCompany(); // is not accessible throug instances: trows ans error
+
 
