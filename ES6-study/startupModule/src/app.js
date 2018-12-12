@@ -1,9 +1,10 @@
 class Drone {
+    constructor(id, name) {
+        console.log('in Drone constructor'); // log the message when instantiated
+        console.log('id: ' + id); // log the attribute id passed when instantiated
+        console.log(Date() + ' - ' + id + ' ' + name );   
+    }
 }
 
-let drone = new Drone();
+let drone = new Drone('A123', 'Flyer');
 
-console.log(typeof Drone); // is a constructor function
-console.log(typeof drone) // is an object
-
-console.log(drone instanceof Drone); // is the variable drone an instance of the class Drone?
