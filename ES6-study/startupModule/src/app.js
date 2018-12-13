@@ -1,25 +1,22 @@
-class Drone {
-    constructor(id) {
-        this._id = id; // '_id' is a private variable by convention
-    }
-    
-    get id() { // without the 'get' will need to use parenteses to call : drone.id()
-        return this._id; // now the getter will return the correct id just passin drone.id
-    }
-    
-    set id(value) {
-        this._id = value; // set a new value to _id        
+class Vehicle {
+    constructor(licenceNum) {
+        // all Vehicle needs a licence
+        this.licenceNum = licenceNum;
     }
 }
 
+class Drone extends Vehicle {
+    
+}
 
-let drone = new Drone('A123');
+class Car extends Vehicle {
+    constructor(licenceNum) {
+        // always call super() on derived class constructor
+        super(licenceNum); // without , Vehicle constructor will collapse with Car constructor(error)
+    }
+}
 
-// setting a new value with setter
-drone.id = 'B456';
+let c = new Car('A123');
+// pass a licence number to Car, and Car will pass to Vehicle unsing the super();
 
-// '_id' can be accessed by drone._id but is not common
-console.log('drone id: ' + drone.id ); // return undefined because the var are called '_id'
-
-
-
+console.log(c.licenceNum);
