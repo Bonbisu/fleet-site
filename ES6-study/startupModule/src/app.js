@@ -1,7 +1,6 @@
 class Vehicle {
-    constructor(licenceNum) {
-        // all Vehicle needs a licence
-        this.licenceNum = licenceNum;
+    constructor() {
+        this.gpsEnabled = true; // instance property in abstract class, not static
     }
 }
 
@@ -10,13 +9,12 @@ class Drone extends Vehicle {
 }
 
 class Car extends Vehicle {
-    constructor(licenceNum) {
-        // always call super() on derived class constructor
-        super(licenceNum); // without , Vehicle constructor will collapse with Car constructor(error)
+    constructor() {
+        super();
+        this.gpsEnabled = false; // overrides Vehicle property
     }
 }
 
-let c = new Car('A123');
-// pass a licence number to Car, and Car will pass to Vehicle unsing the super();
+let c = new Car();
 
-console.log(c.licenceNum);
+console.log(c.gpsEnabled);
