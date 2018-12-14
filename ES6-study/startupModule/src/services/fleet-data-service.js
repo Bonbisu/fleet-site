@@ -10,6 +10,23 @@ export class FleetDataService {
         
     }
 
+    getCarByLicense(license) {
+        return this.cars.find(function (car) { // Returns the value of the first element in the array where predicate is true, and undefined otherwise. USE A FUNCTION HERE
+            return car.license === license;
+        })
+    }
+
+    getCarsSortedByLicense() {
+        return this.cars.sort(function (car1, car2) { // sort is a confusing function. If the first element in array should appear first(left), the function must return negative, if should appear after(right), must return positive
+            if (car1.license < car2.license)
+                return -1; // car1 becomes first
+            if (car1.license > car2.license)
+                return 1; // car2 becomes first
+            else
+                return 0;
+        })
+    }
+
     loadData(fleet) {
         for (let data of fleet) {
             switch (data.type) {
