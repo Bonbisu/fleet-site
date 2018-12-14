@@ -8,7 +8,9 @@ dataService.loadData(fleet);
 
 // let car = dataService.getCarByLicense('AT9900'); 
 
-let cars = dataService.getCarsSortedByLicense();
+// let cars = dataService.getCarsSortedByLicense();
+
+let cars = dataService.filterCarsByMake('U');
 
 for (let car of cars)
-    console.log(car.license);  
+    console.log(car);  
