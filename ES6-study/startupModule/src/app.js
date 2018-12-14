@@ -1,18 +1,11 @@
 import { Car } from "./classes/car.js";
 import { Drone } from "./classes/drone.js";
+import { fleet } from "./fleet-data.js";
+import { FleetDataService } from "./services/fleet-data-service.js";
 
-/* 
-Every class needs to be in this own file
+let dataService = new FleetDataService();
+dataService.loadData(fleet);
 
-we have to import every class we want to use
+console.log(dataService.cars);
 
-In this case we dont import Vehicle, so we can't instantiate it
-
-*/
-
-let c = new Car();
-let d = new Drone();
-
-console.log(c);
-console.log(d);
-
+console.log(dataService.drones);
