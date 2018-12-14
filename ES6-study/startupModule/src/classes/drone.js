@@ -1,11 +1,9 @@
 import { Vehicle } from "./vehicle.js";
 
-/*
-Drone inherits from Vehicle, so we import
-
-App.js will use Drone, so we exports
-*/
-
 export class Drone extends Vehicle {
-
+    constructor(license, model, latLong) {
+        super(license, model, latLong);
+        this.airTimeHour = null;
+        this.base = null;
+    }
 }
