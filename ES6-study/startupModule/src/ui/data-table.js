@@ -41,7 +41,7 @@ export class DataTable extends BaseElement {
         }
 
         return `
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="margin: auto;">
             <thead>
                 <tr>
                     ${thTags}

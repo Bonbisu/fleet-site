@@ -17,7 +17,7 @@ export class CarsPage extends Page {
     }
     
     getElementString() {
-        return '<div style="margin: 20px;"><h3>Cars</h3></div>';
+        return '<div style="margin: 20px; text-align: center;"><h3>Cars</h3></div>';
     }
     
 }
