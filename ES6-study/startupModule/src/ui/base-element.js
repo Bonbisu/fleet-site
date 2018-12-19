@@ -8,13 +8,13 @@ export class BaseElement {
 
     appendToElement(el) {
         this.createElement();
-        el.append(this.element);
+        el.append(this.element); // $(`${el}`) formmating as jquery
         this.enableJS();
     }
 
     createElement() {
         let s = this.getElementString();
-        this.element = $(s);
+        this.element = $(s); // jquery function
     }
 
     getElementString() {
