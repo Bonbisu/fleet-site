@@ -81,7 +81,7 @@ export class FleetDataService {
     loadDrone(drone) {
         try {
             let d = new Drone(drone.license, drone.model, drone.latLong);
-            d.airTimeHour = drone.airTimeHour;
+            d.airTimeHours = drone.airTimeHours;
             d.base = drone.base;
             return d;
         } catch(e) {

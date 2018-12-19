@@ -20,11 +20,22 @@ export class DataTable extends BaseElement {
             trTags += `<tr>`
             let tdTags = '';
             for (let property of this.headers) {
-                let field = row[property.toLowerCase()];
-                trTags += `<td class="mdl-data-table__cell--non-numeric">
-                ${field}
-                </td>
-                `;
+                if (property == 'AirTime') {
+                    console.log(row.airTimeHours);
+                    
+                    let field = row.airTimeHours;
+                    trTags += `<td class="mdl-data-table__cell--non-numeric">
+                    ${field}
+                    </td>
+                    `;
+                } else {
+                    let field = row[property.toLowerCase()];
+                    trTags += `<td class="mdl-data-table__cell--non-numeric">
+                    ${field}
+                    </td>
+                    `;
+
+                }
             }
             trTags += '</tr>'
         }

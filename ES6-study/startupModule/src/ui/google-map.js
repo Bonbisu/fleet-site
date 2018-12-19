@@ -19,8 +19,8 @@ export class GoogleMap extends BaseElement {
 
             for (let vehicle of this.data) {
                 let [lat, long] = vehicle.latLong.split(' ');
-                console.log('lat: ' + lat);
-                console.log(vehicle.license);
+                // console.log('lat: ' + lat);
+                // console.log(vehicle.license);
                 
                 let myLatLng = new window.google.maps.LatLng(lat, long);
 
