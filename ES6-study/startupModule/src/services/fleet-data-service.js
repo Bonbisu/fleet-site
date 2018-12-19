@@ -32,6 +32,8 @@ export class FleetDataService {
     }
 
     loadData(fleet) {
+        console.log('Loading Data');
+        
         for (let data of fleet) {
             switch (data.type) {
                 case 'car':
@@ -64,6 +66,8 @@ export class FleetDataService {
                     break;
             }            
         }
+        console.log('Load complete');
+        
     }
      
     loadCar(car) {
