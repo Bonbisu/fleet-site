@@ -17,27 +17,30 @@ export class GoogleMap extends BaseElement {
             center: this.centerOfMap            
             });
 
-            for (let vehicle of this.data) {
-                let [lat, long] = vehicle.latLong.split(' ');
-                // console.log('lat: ' + lat);
-                // console.log(vehicle.license);
+            if (this.data) {
                 
-                let myLatLng = new window.google.maps.LatLng(lat, long);
-
-                var marker = new window.google.maps.Marker({
-                    position: myLatLng,
-                    map: map,
-                    title: vehicle.license
-                });
-                
-                marker.setMap(map);
-            }
+                for (let vehicle of this.data) {
+                    let [lat, long] = vehicle.latLong.split(' ');
+                    // console.log('lat: ' + lat);
+                    // console.log(vehicle.license);
+                    
+                    let myLatLng = new window.google.maps.LatLng(lat, long);
+    
+                    var marker = new window.google.maps.Marker({
+                        position: myLatLng,
+                        map: map,
+                        title: vehicle.license
+                    });
+                    
+                    marker.setMap(map);
+                }
+            }     
 
         }, 0); 
         
     }
 
     getElementString() {
-        return `<div style="width:800px; height:400px;" id="map"></div>`
+        return `<div style="width:800px; height:400px; margin: auto;" id="map"></div>`
     }
 }
